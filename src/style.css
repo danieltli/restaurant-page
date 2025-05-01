@@ -1,4 +1,43 @@
+@font-face {
+    font-family: popMagic;
+    src: url(./GAU_pop_magic.TTF);
+}
+
+
 header{
-    background-image: url(./background.png);
-    height: 30vh;
+    background-image: url(./background.jpg);
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+header > nav{
+    grid-row: 2 / 3;
+}
+
+header > h1 {
+    grid-row: 1 / 2;
+    font-family: popMagic;
+}
+
+body{
+    display: grid;
+    grid-template: 2fr auto / 1fr 5fr 1fr;
+}
+
+#content{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    white-space: pre-line;
+}
+
+#content > div > h1{
+    font-family: popMagic;
 }

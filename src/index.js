@@ -1,9 +1,11 @@
-import { createContact } from "./contact";
-import { createHome } from "./home";
-import { createMenu } from "./menu";
-import bgBanner from "./background.png";
+import { createContact } from "./contact.js";
+import { createHome } from "./home.js";
+import { createMenu } from "./menu.js";
+import bgBanner from "./background.jpg";
 import './style.css';
 
+const bannerContainer = document.createElement("div");
+bannerContainer.className = "banner-container";
 const banner = document.createElement("img");
 banner.src = bgBanner;
 banner.id = "banner";
@@ -14,10 +16,10 @@ export function switchTab(event) {
     case "home-btn":
       createHome();
       break;
-    case "menu-button":
+    case "menu-btn":
       createMenu();
       break;
-    case "contact-button":
+    case "contact-btn":
       createContact();
       break;
   }
@@ -27,11 +29,11 @@ export function switchTab(event) {
 const homeName = document.createElement("div");
 homeName.className = "name-container";
 const pageName = document.createElement("h1");
-pageName.textContent = "River's Flow Noodle Shop";
+pageName.textContent = "Last Era Diner";
 pageName.id = "name";
 const header = document.querySelector("header");
 
-const buttonArr = ["home", "menu", "contact"].map((label) => {
+const buttonArr = ["Home", "Menu", "Contact"].map((label) => {
   const btn = document.createElement("button");
   btn.textContent = label;
   btn.id = label.toLowerCase() + "-btn";
@@ -40,7 +42,11 @@ const buttonArr = ["home", "menu", "contact"].map((label) => {
 });
 
 header.append(pageName);
-
+header.append(bannerContainer);
 const nav = document.querySelector("nav");
 buttonArr.forEach((btn) => nav.appendChild(btn));
 nav.id = "nav";
+
+//TODO 
+//1. Make menu items and polish the page
+//2 Publish to github pages

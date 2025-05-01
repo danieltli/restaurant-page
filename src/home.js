@@ -1,26 +1,24 @@
-export function createHome(){
-//get the container
-const container = document.getElementById("content");
-//create elements one by one
-// we will be using grid anyway, for ease of styling 
-const homeName = document.createElement("div");
-homeName.className = "name-container";
-const pageName = document.createElement("h1");
-pageName.textContent = "River's Flow Noodle Shop"
-pageName.id = "name";
-const header = document.querySelector("header");
+export function createHome() {
+  const container = document.getElementById("content");
+  container.innerHTML = "";
+  const about = document.createElement("div");
+  const header = document.createElement("h1");
+  header.textContent = "About us";
+  
+  const aboutText = document.createElement("p");
+  aboutText.textContent = `Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex 
+  sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+  Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
+  Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+  Ad litora torquent per conubia nostra inceptos himenaeos. ${"\n"}
+Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. 
+Iaculis massa nisl malesuada lacinia integer nunc posuere. 
+Ut hendrerit semper vel class aptent taciti sociosqu. 
+Ad litora torquent per conubia nostra inceptos himenaeos.`;
 
-const buttonArr = ["Home","About","Contact"].map((label) => {
-    const btn = document.createElement("button");
-  btn.textContent = label;
-  btn.id = label.toLowerCase() + "-btn"; // optional: assign an ID like 'home-btn'
-  return btn;
-});
-
-header.append(pageName);
-const nav = document.querySelector("nav");
-buttonArr.forEach((btn) => nav.appendChild(btn));
-nav.id = "nav";
-
+about.append(header);
+container.append(about);
+about.append(aboutText);
 }
-
